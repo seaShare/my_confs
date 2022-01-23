@@ -70,7 +70,7 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='molokai'
 "==============================================================================
-markdown-preview配置
+" markdown-preview配置
 "==============================================================================
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
