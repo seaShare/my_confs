@@ -168,9 +168,6 @@ let g:mkdp_filetypes = ['markdown']
 "==============================================================================
 let g:tex_flavor = 'latex' "设置TeX文档语法风格
 let g:vimtex_quickfix_mode = 0 "取消自动弹出错误提示，可以使用:copen手动打开
-let g:vimtex_view_general_viewer = 'SumatraPDF' "配置pdf预览器
-let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 "==============================================================================
 "设置快捷键
 "==============================================================================
