@@ -40,6 +40,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes' " 主题
 Plug 'scrooloose/nerdtree' " 好用到吐的文件浏览器
 Plug 'jistr/vim-nerdtree-tabs' " 美化NerdTree
+Plug 'lervag/vimtex'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown预览
 " ↑安装该插件需要在PluginInstall之后，再输入call mkdp#util#install()命令
 call plug#end()
@@ -162,6 +163,14 @@ let g:mkdp_page_title = '「${name}」'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
+"==============================================================================
+"vimtex配置
+"==============================================================================
+let g:tex_flavor = 'latex' "设置TeX文档语法风格
+let g:vimtex_quickfix_mode = 0 "取消自动弹出错误提示，可以使用:copen手动打开
+let g:vimtex_view_general_viewer = 'SumatraPDF' "配置pdf预览器
+let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 "==============================================================================
 "设置快捷键
 "==============================================================================
