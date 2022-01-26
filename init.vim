@@ -1,6 +1,7 @@
 "需要环境变量: 
 "	PyVim: 指向含有neovim模块的python路径
 "	PlugPath: 指向插件存放路径
+" LATEX_VIEWER: 指向LateX使用的pdf浏览器
 "设置编码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -27,9 +28,7 @@ set ruler
 set t_Co=256
 "设置指定的python解释器
 let g:python3_host_prog=$PyVim
-"'S:\Anaconda\envs\pyvim\python.exe'
 let g:python_host_prog=$PyVim
-"'S:\Anaconda\envs\pyvim\python.exe'
 "================================================================================
 "插件
 "================================================================================
@@ -168,6 +167,26 @@ let g:mkdp_filetypes = ['markdown']
 "==============================================================================
 let g:tex_flavor = 'latex' "设置TeX文档语法风格
 let g:vimtex_quickfix_mode = 0 "取消自动弹出错误提示，可以使用:copen手动打开
+let g:vimtex_view_general_viewer = $LATEX_VIEWER "指定PDF浏览器路径
+let g:vimtex_view_general_options
+\ = '-reuse-instance -forward-search @tex @line @pdf'
+\ . ' -inverse-search "' . exepath(v:progpath)
+\ . ' --servername ' . v:servername
+\ . ' --remote-send \"^<C-\^>^<C-n^>'
+\ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
+\ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
+\ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+" 阅读器相关配置
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \ 'pdflatex'         : '-pdf',
+    \ 'dvipdfex'         : '-pdfdvi',
+    \ 'lualatex'         : '-lualatex',
+    \ 'xelatex'          : '-xelatex',
+    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+    \ 'context (luatex)' : '-pdf -pdflatex=context',
+    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+    \} " 指定编译引擎，默认使用xelatex
 "==============================================================================
 "设置快捷键
 "==============================================================================
