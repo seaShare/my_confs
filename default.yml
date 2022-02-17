@@ -8,8 +8,6 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
   - trigger: ";hc"
     replace: "好的老师"
 
