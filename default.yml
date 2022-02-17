@@ -1,4 +1,4 @@
-# espanso configuration file
+jj# espanso configuration file
 
 # This is the default configuration file, change it as you like it
 # You can refer to the official documentation:
@@ -10,6 +10,12 @@ matches:
   # Simple text replacement
   - trigger: ";hc"
     replace: "好的老师"
+
+  # Markdown
+  - trigger: ";``"
+    replace: "`$|$`"
+
+  # code
 
   # Dates
   - trigger: ":date"
