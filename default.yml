@@ -17,6 +17,12 @@ matches:
   - trigger: ";mlink"
     replace: "[]($|$)"
 
+  # Obisdian
+  - trigger: ";olink"
+    replace: "![$|$]"
+  - trigger: ";opdf"
+    replace: "---\nannotation-target: $|$\n---"
+
   # code
 
   # Dates
