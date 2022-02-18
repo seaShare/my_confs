@@ -10,6 +10,10 @@ matches:
   # Simple text replacement
   - trigger: ";hc"
     replace: "好的老师"
+  - trigger: ";email"
+    repalce: "ihaixiu@tom.com"
+  - trigger: ";semail"
+    repalce: "guoxy@zut.edu.cn"
 
   # Markdown
   - trigger: ";mword"
@@ -20,8 +24,21 @@ matches:
   # Obisdian
   - trigger: ";olink"
     replace: "![$|$]"
+    # 搭配annotation快速输入
   - trigger: ";opdf"
     replace: "---\nannotation-target: $|$\n---"
+    # 进阶版annatation输入，支持直接输入名称
+  - trigger: ";oipdf"
+    replace: "---\nannotation-target: {{fpdf.ppdf}}.pdf\n---"
+    vars:
+      - name: fpdf
+        type: form
+        params:
+          layout: |-
+            pdf文件名: {{ppdf}}
+          fields:
+            ppdf:
+              multiline: false
 
   # code
 
