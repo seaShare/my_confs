@@ -59,3 +59,19 @@ matches:
         type: shell
         params:
           cmd: "echo Hello from your shell"
+
+  # 标点符号
+  - trigger: ";f."
+    replace: "。"
+  - trigger: ";f,"
+    replace: "，"
+  - trigger: ";f'"
+    replace: "“$|$”"
+  - trigger: ";f--"
+    replace: "——"
+  - trigger: ";f6"
+    replace: "……"
+  - trigger: ";f/"
+    replace: "、"
+  - trigger: ";f["
+    replace: "《$|$》"
