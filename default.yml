@@ -11,9 +11,9 @@ matches:
   - trigger: ";hc"
     replace: "好的老师"
   - trigger: ";email"
-    repalce: "ihaixiu@tom.com"
+    replace: "ihaixiu@tom.com"
   - trigger: ";semail"
-    repalce: "guoxy@zut.edu.cn"
+    replace: "guoxy@zut.edu.cn"
 
   # Markdown
   - trigger: ";mword"
