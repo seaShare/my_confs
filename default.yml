@@ -42,24 +42,37 @@ matches:
 
   # code
 
-  # Dates
-  - trigger: ":date"
-    replace: "{{mydate}}"
+  # LaTeX
+  #多行命令
+  - trigger: ";ttag"
+    replace: |
+      \begin\{{{tlatex.tag}}\}
+      $|$
+      \end\{{{tlatex.tag}}\}
     vars:
-      - name: mydate
-        type: date
+      - name: tlatex
+        type: form
         params:
-          format: "%m/%d/%Y"
-
-  # Shell commands
-  - trigger: ":shell"
-    replace: "{{output}}"
+          layout: |-
+            标签名: {{tag}}
+          fields:
+            tag: 
+              multiline: false
+              
+  # 单行标签
+  - trigger: ";tcomd"
+    replace: |
+      \{{tlatex.comd}}\{$|$\}
     vars:
-      - name: output
-        type: shell
+      - name : tlatex
+        type: form
         params:
-          cmd: "echo Hello from your shell"
-
+          layout: |-
+            标签名: {{comd}}
+          fields:
+            comd:
+              multiline: false
+      
   # 标点符号
   - trigger: ";f."
     replace: "。"
@@ -75,3 +88,5 @@ matches:
     replace: "、"
   - trigger: ";f["
     replace: "《$|$》"
+  - trigger: ";sword"
+    replace : "\"$|$\""
