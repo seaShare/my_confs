@@ -21,27 +21,6 @@ matches:
   - trigger: ";mlink"
     replace: "[]($|$)"
 
-  # Obisdian
-  - trigger: ";olink"
-    replace: "![$|$]"
-    # 搭配annotation快速输入
-  - trigger: ";opdf"
-    replace: "---\nannotation-target: $|$\n---"
-    # 进阶版annatation输入，支持直接输入名称
-  - trigger: ";oipdf"
-    replace: "---\nannotation-target: {{fpdf.ppdf}}.pdf\n---"
-    vars:
-      - name: fpdf
-        type: form
-        params:
-          layout: |-
-            pdf文件名: {{ppdf}}
-          fields:
-            ppdf:
-              multiline: false
-
-  # code
-
   # LaTeX
   #多行命令
   - trigger: ";ttag"
