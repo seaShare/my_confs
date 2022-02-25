@@ -20,6 +20,8 @@ matches:
     replace: "`$|$`"
   - trigger: ";mlink"
     replace: "[]($|$)"
+  - trigger: ";milink"
+    form: "[{{title}}]({{link}})"
 
   # LaTeX
   #多行命令
