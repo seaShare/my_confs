@@ -1,0 +1,10 @@
+filter_title: "Visual Studio Code"
+matches:
+  # python
+  - trigger: ";pyfor"
+    form: "for {{i}} in {{set}}:"
+    form_fields:
+      i:
+        default: "i"
+  - trigger: ";pydef"
+    form: "def {{func}}($|$):"

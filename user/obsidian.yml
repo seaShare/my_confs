@@ -24,3 +24,10 @@ matches:
           fields:
             ppdf:
               multiline: false
+  - trigger: ";pptpage"
+    replace: |
+      ---
+      
+      $|$
+      
+      ---
