@@ -14,6 +14,27 @@ matches:
     replace: "ihaixiu@tom.com"
   - trigger: ";semail"
     replace: "guoxy@zut.edu.cn"
+  - trigger: ";rq"
+    replace: "{{cur_d}}"
+    vars:
+      - name: cur_d
+        type: date
+        params:
+          format: "%Y%m%d"
+  - trigger: ";-rq"
+    replace: "{{cur_d1}}"
+    vars:
+      - name: cur_d1
+        type: date
+        params:
+          format: "%Y-%m-%d"
+  - trigger: ";crq"
+    replace: "{{cur_d2}}"
+    vars:
+      - name: cur_d2
+        type: date
+        params:
+          format: "%Y年%m月%d日"
 
   # Markdown
   - trigger: ";mword"
