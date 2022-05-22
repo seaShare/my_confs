@@ -8,3 +8,5 @@ matches:
         default: "i"
   - trigger: ";pydef"
     form: "def {{func}}($|$):"
+  - trigger: ";pymain"
+    replace: "if __name__ == \"__main__\":\n"
