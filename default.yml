@@ -74,6 +74,26 @@ matches:
           fields:
             comd:
               multiline: false
+
+  # 其他
+  - trigger: ";folder"
+    replace: "{{folderInfo.whenDo}}-{{folderInfo.doWhat}}-{{createDate}}"
+    vars:
+      - name: folderInfo
+        type: form
+        params:
+          layout: |-
+            完成时机: {{whenDo}}
+            要如何做: {{doWhat}}
+          fields:
+            whenDo:
+              multiline: false
+            doWhat:
+              multiline: false
+      - name: createDate
+        type: date
+        params:
+          format: "%m%d%H%M"
       
   # 标点符号
   - trigger: ";f."
