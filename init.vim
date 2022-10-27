@@ -205,6 +205,7 @@ map <Leader>tn :tabnext<cr>
 map <Leader>tp :tabprev<cr>
 map <Leader>to :tabonly<cr>
 nmap <Leader>/ :noh<cr>
+map <leader>w :w<cr>
 map <leader>r :NERDTreeFind<cr>
 nmap <leader>mp <Plug>MarkdownPreview
 nmap <leader>ms <Plug>MarkdownPreviewStop
