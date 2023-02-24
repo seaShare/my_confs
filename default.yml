@@ -1,0 +1,136 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+    - 
+        trigger: ";email"
+        replace: "ihaixiu@tom.com"
+    - 
+        trigger: ";semail"
+        replace: "guoxy@zut.edu.cn"
+    - 
+        trigger: ";rq"
+        replace: "{{cur_d}}"
+        vars:
+          - 
+            name: cur_d
+            type: date
+            params:
+              format: "%Y%m%d"
+    - 
+        trigger: ";-rq"
+        replace: "{{cur_d1}}!!!"
+        vars:
+          - 
+            name: cur_d1
+            type: date
+            params:
+              format: "%Y-%m-%d"
+    - 
+        trigger: ";crq"
+        replace: "{{cur_d2}}"
+        vars:
+          - 
+            name: cur_d2
+            type: date
+            params:
+              format: "%Y年%m月%d日"
+              
+    - 
+        trigger: ";filett"
+        replace: "{{info.f_title}}_$|${{info.m_title}}_{{cur_d}}"
+        vars:
+            -
+                name: info
+                type: form
+                params:
+                    layout: |-
+                        项目名称: {{f_title}}
+                        文件名称: {{m_title}}
+            - 
+                name: cur_d
+                type: date
+                params:
+                    format: "%Y%m%d"
+
+    # 代码
+    - 
+        trigger: ";pymain"
+        replace: "if __name__ == \"__main__\":\n"             
+    
+    # Markdown
+    - 
+        trigger: ";mword"
+        replace: "`$|$`"
+    - 
+        trigger: ";mlink"
+        replace: "[]($|$)"
+    - 
+        trigger: ";milink"
+        form: "[{{title}}]({{link}})"
+    
+    # LaTeX
+    #多行命令
+    - 
+        trigger: ";ttag"
+        replace: |
+          \begin\{{{tlatex.tag}}\}
+          $|$
+          \end\{{{tlatex.tag}}\}
+        vars:
+            - 
+                name: tlatex
+                type: form
+                params:
+                    layout: |-
+                        标签名: {{tag}}
+                    fields:
+                        tag: 
+                            multiline: false
+                  
+    # 单行标签
+    - 
+        trigger: ";tcomd"
+        replace: |
+           \{{tlatex.comd}}\{$|$\}
+        vars:
+            - 
+                name : tlatex
+                type: form
+                params:
+                    layout: |-
+                      标签名: {{comd}}
+                    fields:
+                        comd:
+                            multiline: false
+          
+    # 标点符号
+    - 
+        trigger: ";f."
+        replace: "。"
+    - 
+        trigger: ";f,"
+        replace: "，"
+    - 
+        trigger: ";f'"
+        replace: "“$|$”"
+    - 
+        trigger: ";f--"
+        replace: "——"
+    - 
+        trigger: ";f6"
+        replace: "……"
+    - 
+        trigger: ";f/"
+        replace: "、"
+    - 
+        trigger: ";f["
+        replace: "《$|$》"
+    - 
+        trigger: ";sword"
+        replace : "\"$|$\""

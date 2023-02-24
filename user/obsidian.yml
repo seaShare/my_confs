@@ -1,0 +1,33 @@
+filter_title: "Obsidian"
+
+matches:
+  - trigger: ";olink"
+    replace: "![$|$]"
+    # 搭配annotation快速输入
+  - trigger: ";opdf"
+    replace: |
+      ---
+        annotation-target: $|$
+      ---
+    # 进阶版annatation输入，支持直接输入名称
+  - trigger: ";oipdf"
+    replace: |
+      ---
+        annotation-target: {{fpdf.ppdf}}.pdf
+      ---
+    vars:
+      - name: fpdf
+        type: form
+        params:
+          layout: |-
+            pdf文件名: {{ppdf}}
+          fields:
+            ppdf:
+              multiline: false
+  - trigger: ";pptpage"
+    replace: |
+      ---
+      
+      $|$
+      
+      ---
