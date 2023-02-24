@@ -40,24 +40,6 @@ matches:
             type: date
             params:
               format: "%Y年%m月%d日"
-              
-    - 
-        trigger: ";filett"
-        replace: "{{info.f_title}}_$|${{info.m_title}}_{{cur_d}}"
-        vars:
-            -
-                name: info
-                type: form
-                params:
-                    layout: |-
-                        项目名称: {{f_title}}
-                        文件名称: {{m_title}}
-            - 
-                name: cur_d
-                type: date
-                params:
-                    format: "%Y%m%d"
-
     # 代码
     - 
         trigger: ";pymain"
