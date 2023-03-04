@@ -1,0 +1,2 @@
+C:\Users\haixiu\AppData\Local\nvim\init.vim
+C:\Users\haixiu\AppData\Local\nvim\autoload\plug.vim
