@@ -73,7 +73,7 @@ matches:
                     fields:
                         tag: 
                             multiline: false
-     
+
     # 单行标签
     - 
         trigger: ";tcomd"
