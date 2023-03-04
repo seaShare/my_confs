@@ -90,7 +90,7 @@ matches:
                         comd:
                             multiline: false
 
-    # 标点符号
+    # 中文标点符号
     - 
         trigger: ";f."
         replace: "。"
