@@ -44,7 +44,7 @@ matches:
     - 
         trigger: ";pymain"
         replace: "if __name__ == \"__main__\":\n"             
-    
+
     # Markdown
     - 
         trigger: ";mword"
@@ -55,7 +55,7 @@ matches:
     - 
         trigger: ";milink"
         form: "[{{title}}]({{link}})"
-    
+
     # LaTeX
     #多行命令
     - 
@@ -74,7 +74,7 @@ matches:
                     fields:
                         tag: 
                             multiline: false
-                  
+     
     # 单行标签
     - 
         trigger: ";tcomd"
@@ -90,7 +90,7 @@ matches:
                     fields:
                         comd:
                             multiline: false
-          
+
     # 标点符号
     - 
         trigger: ";f."
