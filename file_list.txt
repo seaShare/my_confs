@@ -1,3 +1,0 @@
-C:\Users\haixiu\AppData\Roaming\espanso\default.yml
-C:\Users\haixiu\AppData\Roaming\espanso\user\obsidian.yml
-C:\Users\haixiu\AppData\Roaming\espanso\user\vscode.yml
