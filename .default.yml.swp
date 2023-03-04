@@ -55,7 +55,7 @@ matches:
         trigger: ";milink"
         form: "[{{title}}]({{link}})"
 
-    # LaTeX
+    ## LaTeX
     #多行命令
     - 
         trigger: ";ttag"
