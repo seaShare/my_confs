@@ -68,8 +68,7 @@ let mapleader="\<Space>"
 nmap <Leader>j J
 nmap J 5j
 nmap K 5k
-imap jk <Esc>
-imap jj <C-o>
+imap <C-j> <Esc>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
